@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitts's Law Game</title>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#gameCanvas {
+    width: 100%; /* Full width */
+    /* Height will be set dynamically in JavaScript */
+    display: block; /* Removes bottom margin/padding */
+    background: #f0f0f0; /* Optional: better visibility */
+}
+
+.overlay {
+    z-index: 10;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: for better visibility */
+}
+
+.overlay > div {
+    padding: 10px;
+    border-radius: 8px;
+}
+</style>
+<div>
+<body>
+<div class="overlay">
+	<div>
+		<label for="difficulty">Difficulty (Target Size): </label>
+		<select id="difficulty">
+			<option value="50">Easy</option>
+			<option value="30">Medium</option>
+			<option value="10">Hard</option>
+		</select>
+		<button id="startButton">Start Game</button>
+	</div>
+	<div>
+		Time for Last Click: <span id="lastClickTime">0</span> ms<br>
+		Total Time for 20 Clicks: <span id="totalTime">0</span> ms
+	</div>
+</div>
+<canvas id="gameCanvas"></canvas>
+<script src="game.js"></script>
+</body>
+</html>
